@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddHttpClient<AuctionSvcHttpClient>().AddPolicyHandler(GetPolicy());
+builder.Services.AddHttpClient<AuctionSvcHttpClient>(conf => conf.BaseAddress = new Uri(builder.Configuration["AuctionServiceUrl"])).AddPolicyHandler(GetPolicy());
 
 
 builder.Services.AddControllers();
