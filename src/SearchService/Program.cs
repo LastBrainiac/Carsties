@@ -3,6 +3,8 @@ using Polly;
 using SearchService.Data;
 using SearchService.Services;
 using System.Net;
+using MassTransit;
+using SearchService.Consumer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddHttpClient<AuctionSvcHttpClient>(conf => conf.BaseAddress = new Uri(builder.Configuration["AuctionServiceUrl"])).AddPolicyHandler(GetPolicy());
 
+builder.Services.AddMassTransit(x =>
+{
+    x.AddConsumersFromNamespaceContaining<AuctionCreatedConsumer>();
+
+    x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("search", false));
+
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.ConfigureEndpoints(context);
+    });
+});
 
 builder.Services.AddControllers();
 
