@@ -1,4 +1,5 @@
 ﻿using AuctionService.Entities;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 
 namespace AuctionService.Data
@@ -16,9 +17,9 @@ namespace AuctionService.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            //modelBuilder.AddInboxStateEntity();
-            //modelBuilder.AddOutboxMessageEntity();
-            //modelBuilder.AddOutboxStateEntity();
+            modelBuilder.AddInboxStateEntity();
+            modelBuilder.AddOutboxMessageEntity();
+            modelBuilder.AddOutboxStateEntity();
 
         }
     }
