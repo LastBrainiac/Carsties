@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuctionService", "src\Aucti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchService", "src\SearchService\SearchService.csproj", "{398E6402-81D0-4975-AA00-0450CD785E05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{5EEA0DA9-FD28-496E-9C58-80F78DEA911B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{5EEA0DA9-FD28-496E-9C58-80F78DEA911B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4B188A26-ECF9-4F96-9CC7-7279DCB5CAAB} = {B0CFE242-4001-42F3-A517-61E564BD5346}
 		{398E6402-81D0-4975-AA00-0450CD785E05} = {B0CFE242-4001-42F3-A517-61E564BD5346}
+		{5EEA0DA9-FD28-496E-9C58-80F78DEA911B} = {B0CFE242-4001-42F3-A517-61E564BD5346}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {583511C6-336D-482B-88C2-CA15557FC783}
