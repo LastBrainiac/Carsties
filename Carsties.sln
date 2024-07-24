@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchService", "src\Search
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{5EEA0DA9-FD28-496E-9C58-80F78DEA911B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "IdentityService\IdentityService.csproj", "{DDE26627-C29F-4C7C-BB1A-98ACEB50B883}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService", "IdentityService\IdentityService.csproj", "{DDE26627-C29F-4C7C-BB1A-98ACEB50B883}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
