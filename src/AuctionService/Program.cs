@@ -10,7 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AuctionDbContext>(opt =>
 {
-    //opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
@@ -21,13 +20,18 @@ builder.Services.AddMassTransit(x=>
     x.AddEntityFrameworkOutbox<AuctionDbContext>(o =>
     {
         o.QueryDelay = TimeSpan.FromSeconds(10);
-        //o.UsePostgres();
         o.UseSqlServer();
         o.UseBusOutbox();
     });
 
     x.UsingRabbitMq((context, cfg) =>
     {
+        cfg.Host(builder.Configuration["RabbitMq:Host"], "/", host =>
+        {
+            host.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
+            host.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
+        });
+
         cfg.ConfigureEndpoints(context);
     });
 });
