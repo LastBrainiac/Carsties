@@ -95,7 +95,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=http://+:80
       # - ClientApp=http://app.carsties.com
-      - ConnectionStrings__DefaultConnection=Server=mssql;User Id=sa;Password=Mtbs2023*;Database=auctions;TrustServerCertificate=True
+      - ConnectionStrings__DefaultConnection=Server=mssql;User Id=sa;Password=Mtbs2023*;Database=identity;TrustServerCertificate=True
       # - VIRTUAL_HOST=id.carsties.com
     ports:
       - 5000:80
