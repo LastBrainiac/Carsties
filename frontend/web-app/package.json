@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "flowbite-react": "^0.10.1",
-    "next": "14.2.10",
+    "next": "^14.2.15",
     "next-auth": "^4.24.7",
     "query-string": "^9.1.0",
     "react": "^18",
